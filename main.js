@@ -1,6 +1,11 @@
 
-const {app, BrowserWindow, Menu} = require('electron')
+const {app, BrowserWindow, Menu, crashReporter} = require('electron')
 const path = require('path')
+
+crashReporter.start({
+  submitURL: 'https://someurl.com/crashreport',
+  uploadToServer: false
+})
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
